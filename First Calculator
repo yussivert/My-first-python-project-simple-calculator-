@@ -1,0 +1,152 @@
+def calc():
+    c1 = float(input("Enter first number: "))
+    fun = input("Enter function (+,-,*,/): ")
+    c2 = float(input("Enter second number: "))
+    if fun == "+":
+        print(c1, "+", c2, "=", c1+c2)
+        back = input("write 'menu' if you would like to go back to menu: ")
+        if back == "menu":
+            menu()
+        else:
+            calc()
+        calc()
+    elif fun == "-":
+        print(c1, "-", c2, "=", c1-c2)
+        back = input("write 'menu' if you would like to go back to menu: ")
+        if back == "menu":
+            menu()
+        else:
+            calc()
+        calc()
+    elif fun == "*":
+        print(c1, "*", c2, "=", c1*c2)
+        back = input("write 'menu' if you would like to go back to menu: ")
+        if back == "menu":
+            menu()
+        else:
+            calc()
+        calc()
+    elif fun == "/":
+        print("1. Round")
+        print("2. Don't round")
+        r = input("Your choice: ")
+        if r == 1:
+            print(c1, "/", c2, "=", round(c1 / c2))
+            back = input("write 'menu' if you would like to go back to menu: ")
+            if back == "menu":
+                menu()
+            else:
+                calc()
+        else:
+            print(c1, "/", c2, "=", float(c1/c2))
+            back = input("write 'menu' if you would like to go back to menu: ")
+            if back == "menu":
+                menu()
+            else:
+                calc()
+        calc()
+    else:
+        print("Wrong function!")
+        calc()
+def PS():
+    print("1. Square")
+    print("2. Rectangle")
+    print("3. Triangle")
+    fig = int(input("Your choice: "))
+    ps = input(("Perimeter or Area?(P/A): "))
+    if ps == "P":
+        if fig == 1:
+            s1 = int(input("Enter the side: "))
+            if s1 <=0:
+                print("Negative number!")
+                PS()
+            print("Your answer:", s1 * 4)
+            back = input("write 'menu' if you would like to go back to menu: ")
+            if back == "menu":
+                menu()
+            else:
+                PS()
+        elif fig == 2:
+            P1 = int(input("Enter the first side: "))
+            P2 = int(input("Enter the second side: "))
+            if P1 or P2 <=0:
+                print("Negative number!")
+                PS()
+            print("Your answer:", P1 + P1 + P2 + P2)
+            back = input("write 'menu' if you would like to go back to menu: ")
+            if back == "menu":
+                menu()
+            else:
+                PS()
+        if fig == 3:
+            T1 = int(input("Enter the first side: "))
+            T2 = int(input("Enter the second side: "))
+            T3 = int(input("Enter the third side: "))
+            if T1 or T2 or T3 <=0:
+                print("Negative number!")
+                PS()
+            print("Your answer:", T1+T2+T3)
+            back = input("write 'menu' if you would like to go back to menu: ")
+            if back == "menu":
+                menu()
+            else:
+                PS()
+    if ps == "A":
+        if fig == 1:
+            a1 = int(input("Enter a side: "))
+            print("Your answer:", a1*a1)
+            back = input("write 'menu' if you would like to go back to menu: ")
+            if back == "menu":
+                menu()
+            else:
+                PS()
+        if fig == 2:
+            rec1 = int(input("Enter length: "))
+            rec2 = int(input("Enter width: "))
+            print("Your answer is:", rec1 * rec2)
+            back = input("write 'menu' if you would like to go back to menu: ")
+            if back == "menu":
+                menu()
+            else:
+                PS()
+        if fig == 3:
+            tr1 = int(input("Enter height: "))
+            tr2 = int(input("Enter side: "))
+            tr12 = tr1 + tr2
+            print("Your answer:", float(tr12/2))
+            back = input("write 'menu' if you would like to go back to menu: ")
+            if back == "menu":
+                menu()
+            else:
+                PS()
+def Sq():
+    sqn = float(input("Enter your number: "))
+    print("Your answer:", sqn*sqn)
+    back = input("write 'menu' if you would like to go back to menu: ")
+    if back == "menu":
+        menu()
+    else:
+        Sq()
+def Cb():
+    cbn = float(input("Enter a number: "))
+    print("Your answer is: ", cbn*cbn*cbn)
+    back = input("write 'menu' if you would like to go back to menu: ")
+    if back == "menu":
+        menu()
+    else:
+        Cb()
+def menu():
+    print("1. Calculator")
+    print("2. Perimeter/area")
+    print("3. Square root")
+    print("4. Cube root")
+    c = int(input("Your choice: "))
+    if c == 1:
+        calc()
+    elif c == 2:
+        PS()
+    elif c == 3:
+        Cb()
+    elif c == 4:
+        Cb()
+menu()
